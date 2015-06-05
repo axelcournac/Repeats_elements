@@ -23,7 +23,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 * `ICE` / [hiclib](http://mirnylab.bitbucket.org/hiclib)<sup>*</sup>
 * `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
-* `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html
+* `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
 
 
 ## Raw data
