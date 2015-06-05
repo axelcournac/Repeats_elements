@@ -32,8 +32,9 @@ ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR400/SRR4
 
 We convert the files in fastq files using sra tool fastq-dump:   
 
+```bash
 ./fastq-dump /data/human/*
-
+```
 
 
 ## Filtering of the data
@@ -73,3 +74,4 @@ locale:
 
 attached base packages:
 [1] stats     graphics  grDevices utils     datasets  methods   base  
+```
