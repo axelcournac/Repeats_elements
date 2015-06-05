@@ -1,0 +1,20 @@
+#!/bin/bash
+
+# To convert HDF5 files into text files
+
+# bank="/media/03b8b079-9d7a-4162-8201-6dd5d9923f62/08_22_2013_Hi_Seq_MM/seq_demulti/R5/alignment_iterativ_miseq"
+
+bank=$1
+
+echo "Bank to process:"
+echo $bank
+
+cd $bank
+rm -f 1.bam* tmp
+rm -f 2.bam* tmp
+
+mkdir -p tmp/mat
+python /home/axel/Bureau/python/h5dictToTxt.py $bank/tmp/hic_lib.hdf5 $bank/tmp
+
+cd $bank/tmp
+paste chrms1 cuts1 strands1 chrms2 cuts2 strands2 rfragIdxs1 rfragIdxs2 > output_alignment_idpt.dat
