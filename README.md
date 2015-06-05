@@ -25,7 +25,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 
 
-# Raw data
+## Raw data
 We downloaded raw data from Short Read Archive server at the following address :
 
 ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR400/SRR400260/SRR400260.sra
@@ -37,21 +37,21 @@ We convert the files in fastq files using sra tool fastq-dump:
 ```
 
 
-## Filtering of the data
-## Normalization of the data
+### Filtering of the data
+### Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
 With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. 
 
-## Calcul of Colocalisation Scores and random generations
+# Calcul of Colocalisation Scores and random generations
 
 Colocalisation Scores were calculated. 
 For random generetion and vectors manipulation, we used the generators from the GNU Scientific Library. 
 
-## Plots of the results
+### Plots of the results
 To plot scatter plots of the different repeats elements. we use the R script: scatter_plot.R
 
 
-## Scripts used for Figures 3
+### Scripts used for Figures 3
 We used R scripts:
 
 
