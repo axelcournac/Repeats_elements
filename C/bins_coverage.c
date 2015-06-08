@@ -81,7 +81,7 @@ char type[100];
 char family[100];
 int indice,indice_avant;
 
-fic1 = fopen("bornes_10_corrected.dat","r");
+fic1 = fopen("bounds_corrected.dat","r");
 if(!fic1) return 1;
 j=0;
 	      while(fscanf(fic1,"%d %d %d %d",&c,&left,&right,&indice) != EOF)
