@@ -118,23 +118,28 @@ mkdir OUTPUT_TEMP2
 ./matrix2 10 /data/axel/Hi_seq_Dixon/hesc_rep2/output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners /home/romain/Desktop/divers/CELL/coverage_bins_hESC.dat 200 800
 ```
 This program takes several arguments: 
-- the file of output of the aligment 
-- the file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
-- the th
+- a file of output of the aligment 
+- a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
+- the thresholds [min - max] for the normalization procedure that will exclude all bins with norms outside the ranges. It will notably filters poor interacting bins. 
 
-### Plots of the results
-To lauch the calculus of the pvalue associated to each repeat element, we R script 
-To launch the script 
+### Plots of the significant repeats:
+To lauch the calculus of the pvalue associated to each repeat element, we use R script null_model.R that makes the fit with a log normnal law. 
+To launch the script for every repeat, lauch in the directory where you put the output of the colocalization_cover.c code:
+
 ```bash
 bash script_null_model.sh
 ```
-
 To plot scatter plots of the different repeats elements. we use the R script: scatter_plot.R
-
+```bash
+Rscript scatter_plot2.R
+```
+It will generate the final plots as the ones presented in the Fig 2 or Fig 4 of the main text. 
 
 ### Scripts used for Figures 3
 We used R scripts:
+For the Receiver Operating Curves (ROC), we used the script 
 
+For the comparison of the groups enriched with binding sites of 
 
 
 ## sessionInfo()
