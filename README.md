@@ -139,12 +139,10 @@ Rscript scatter_plot2.R
 It will generate the final plots as the ones presented in the Fig 2 or Fig 4 of the main text. 
 
 ### Scripts used for Figures 3
-We used R scripts:
+We used several R scripts:
+- For the Receiver Operating Curves (ROC) to show correlation between the age of the repeats elements and the significativity in Colocalization Score, we used roc_repeat_age.R. The different input files for this plot are given in the data repository.
 
-
-For the Receiver Operating Curves (ROC), we used the script roc_repeat_TFBS.R to show the correlation with enrichment of Transcription Factor Binding Sites (TFBS). The different input files for this plot are given in the data repository.  
-
-
+- For the Receiver Operating Curves (ROC) to show the correlation with enrichment of Transcription Factor Binding Sites (TFBS), we used the script roc_repeat_TFBS.R. The different input files for this plot are given in the data repository.
 
 
 ## sessionInfo()
