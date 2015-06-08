@@ -2,19 +2,32 @@
 
 library(ROCR)
 
+# repeats that colocalize set:
+# d=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/repeats_pvalues_hesc.dat");
 
 d=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/repeats_all_pvalues_cover.dat2");
+# d=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/repeats_all_scores_cover.dat2");
+
+#d=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/test2_GM12978_cover.dat");
 
 # repeats associated with TF : 
 s=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/TF_repeats_Bourque_S4_2013.dat");
 
+#s=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/TF_repeats_smail.dat");
+#s=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/results_repeats_smail.dat3");
+#s=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/TF_repeats_ctcf.dat");
+
+#s1=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/list_repeats_CTCF_nanog_oct4_bourque2006.dat");
+
 # do not forget to have homogenous repeats names between different files 
 s1=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/list_TF_nanog_oct4_ctcf_bourque2010.dat");
 
+#s1=read.table("/home/axel/Bureau/REPEATS_FEV2015/NAR/repeat_roc/list_repeats_wang2014.dat")
 
 # selection of hesc cells type exp (for Bourque exp):
 s2 =   subset(s,s$V2=="H1hesc" | s$V2== "H9es" | s$V2=="Rep1H1es" | s$V2== "Rep1H7es");
 #s2 =   subset(s,s$V2=="Gm12878")
+
 
 # order by pvalues :
 ds <- d[order(d$V2),];
