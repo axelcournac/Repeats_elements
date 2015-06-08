@@ -41,8 +41,19 @@ We separate both ends of the reads using the command lines written in the script
 ```bash
 bash separate_mates.sh
 ```
-We aligned the reads with iterative alignment of the script iterapive_mapping.py of hiclib. 
-We modified the script to add a value threshold on the mapping quality. 
+We aligned the reads with iterative alignment of the script iterative_mapping.py of hiclib. 
+We modified the script to add a value threshold on the mapping quality (30 or 40). 
+Example of lines used to launch the alignment procedure:
+```bash
+bank='/media/human/bank400260/';  echo $bank; 
+fast1='/media/human/seq/SRR400260.fastq.end1'
+fast2='/media/human/seq/SRR400260.fastq.end2' 
+path_to_index='/home/axel/Bureau/python/fasta/human/hg19_python';
+path_to_fasta='/home/axel/Bureau/python/fasta/human';
+name_of_enzyme='HindIII'
+
+python iterative_mapping.py  $bank $fast1 $fast2 $path_to_index $path_to_fasta $name_of_enzyme 
+```
 
 We convert the output of the aligment which is in HDF5 format into text file with the script convert_HDF5_txt.bh:
 
@@ -73,7 +84,7 @@ gcc pcr_duplicate.c
 
 ## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
-With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. 
+With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. The normalization is done in the code 
 
 ## Calcul of Colocalisation Scores and random generations
 
