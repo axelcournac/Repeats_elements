@@ -1,5 +1,5 @@
 # Repeats elements and HiC analysis
-This repository contains scripts to recreate figures in paper **The 3D folding of metazoan genomes correlates with the association of similar repetitive elements** (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
+This repository contains scripts to recreate figures in paper The 3D folding of metazoan genomes correlates with the association of similar repetitive elements (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 
 ## Dependencies
@@ -19,8 +19,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 ### External programs
 
 * `bedtools`
-* `bigWigAverageOverBed`<sup>*</sup>
-* `ICE` / [hiclib](http://mirnylab.bitbucket.org/hiclib)<sup>*</sup>
+* `ICE` / [hiclib](http://mirnylab.bitbucket.org/hiclib)
 * `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
@@ -88,9 +87,8 @@ gcc filter_reads_repeats.c
 ./a.out
 ```
 
-
 ## Normalization of the data
-We used the normalization procedure called SCN that we implemented in C. 
+We used the normalization procedure called SCN (presented in http://www.biomedcentral.com/1471-2164/13/436) that we implemented in C. 
 With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. The normalization is done in the code colocalization_cover.c 
 
 ## Calcul of Colocalization Scores and random generations
@@ -109,7 +107,6 @@ gcc -I/usr/local/include -c $nom_prog.c
 
 echo link :
 gcc -L/usr/local/lib $nom_prog.o -lgsl -lgslcblas -lm
-
 
 mv a.out matrix2
 echo execution :
