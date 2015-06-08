@@ -123,12 +123,12 @@ jj=0;
 		      chr2=chr2+1;
 		      locus1=locus1+1;
 		      locus2=locus2+1;
-
 		      if(sens1==0){sens1=16;}       if(sens1==1){sens1=0;}
-          if(sens2==0){sens2=16;}       if(sens2==1){sens2=0;}
+                      if(sens2==0){sens2=16;}       if(sens2==1){sens2=0;}
 	      
 		      mq1=00;match1=00;
 		      mq2=00;match2=00;	
+		      
 		      if(chr1 >0  && chr2 >0 && locus1 < tab_fin[chr1-1] && locus2 < tab_fin[chr2-1])	
 		      {	
 		      //correction pour les négatifs car le logiciel de mapping donne la borne inférieure en position absolue : 
