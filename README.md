@@ -107,7 +107,7 @@ gcc -I/usr/local/include -c $nom_prog.c
 
 # gcc $nom_prog.c -lm
 
-echo link :
+echo Linking :
 gcc -L/usr/local/lib $nom_prog.o -lgsl -lgslcblas -lm
 
 mv a.out matrix2
