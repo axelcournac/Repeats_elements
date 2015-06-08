@@ -24,6 +24,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 * `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
+* Bowtie2 / [bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
 
 ## Raw data
@@ -36,7 +37,10 @@ We convert the files in fastq files using sra tool fastq-dump:
 ```bash
 ./fastq-dump /data/human/*
 ```
-
+We separate both ends of the reads using the command lines written in the script script_separate.bh :
+```bash
+bash script_separate.bh
+```
 
 ### Filtering of the data
 ### Normalization of the data
