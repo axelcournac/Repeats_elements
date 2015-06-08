@@ -81,17 +81,42 @@ We then removed PCR duplicates i.e paires of reads that have exactly the same po
 gcc pcr_duplicate.c
 ./a.out
 ```
-If we want to filter all reads that overlap a repeated sequence of Rebase, we used the C code
+If we want to filter all reads that overlap a repeated sequence of Repbase, we used the C code filter_reads_repeats.c
+(present in the file repeat_masker_hg19.dat1)
+```bash
+gcc filter_reads_repeats.c
+./a.out
+```
 
 
 ## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
 With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. The normalization is done in the code 
 
-## Calcul of Colocalisation Scores and random generations
+## Calcul of Colocalization Scores and random generations
 
-Colocalisation Scores were calculated. 
-For random generetion and vectors manipulation, we used the generators from the GNU Scientific Library. 
+All calculations of Colocalization Scores of the groups of repeat elements and random sets were done in the same C code. For random numbers generetions and vectors manipulations, we used the generators from the GNU Scientific Library. 
+```bash
+#!/bin/bash
+
+nom_prog="matrice_repeat_SIMPLE_cover_sum_fev2015"
+
+echoCompilation and linking of: $nom_prog   .
+echo compile :
+gcc -I/usr/local/include -c $nom_prog.c
+
+# gcc $nom_prog.c -lm
+
+echo link :
+gcc -L/usr/local/lib $nom_prog.o -lgsl -lgslcblas -lm
+
+
+mv a.out matrix2
+echo execution :
+
+mkdir OUTPUT_TEMP2
+./matrix2 10 /data/axel/Hi_seq_Dixon/hesc_rep2/output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners /home/romain/Desktop/divers/CELL/covering.dat 200 800
+```
 
 ### Plots of the results
 To plot scatter plots of the different repeats elements. we use the R script: scatter_plot.R
