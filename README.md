@@ -140,9 +140,11 @@ It will generate the final plots as the ones presented in the Fig 2 or Fig 4 of 
 
 ### Scripts used for Figures 3
 We used R scripts:
-For the Receiver Operating Curves (ROC), we used the script 
 
-For the comparison of the groups enriched with binding sites of 
+
+For the Receiver Operating Curves (ROC), we used the script roc_repeat_TFBS.R to show the correlation with enrichment of Transcription Factor Binding Sites (TFBS). The different input files for this plot are given in the data repository.  
+
+
 
 
 ## sessionInfo()
