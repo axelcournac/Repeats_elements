@@ -44,7 +44,12 @@ bash separate_mates.sh
 We aligned the reads with iterative alignment of the script iterapive_mapping.py of hiclib. 
 We modified the script to add a value threshold on the mapping quality. 
 
-We convert the output of the aligment which is in HDF5 format into text file with the script 
+We convert the output of the aligment which is in HDF5 format into text file with the script convert_HDF5_txt.bh:
+
+```bash
+bash convert_HDF5_txt.bh /path_of_the_bank_of_the_output_of_aligment
+```
+
 
 ### Filtering of the data
 ### Normalization of the data
