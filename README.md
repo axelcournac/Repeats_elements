@@ -117,7 +117,8 @@ This program takes several arguments:
 - a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
 - the thresholds [min - max] for the normalization procedure that will exclude all bins with norms outside the ranges. It will notably filters poor interacting bins. 
 
-To calculate the bins coverage from a file of output of alignment, we use the C code. 
+To calculate the bins coverage from a file of output of alignment, we use the C code bins_coverage.c.
+This code takes as input a file that contains coordinates of the bins and alignment output file. 
 
 
 ### Plots of the significant repeats:
