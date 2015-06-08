@@ -2,7 +2,7 @@
 
 library(BSgenome.Hsapiens.UCSC.hg19)
 
-d<-read.table("/bounds_10_corrected.dat2")
+d<-read.table("bounds_10_corrected.dat2")
 
 chr23<-Hsapiens$chrX
 chr24<-Hsapiens$chrY
