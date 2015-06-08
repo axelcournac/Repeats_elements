@@ -1,3 +1,24 @@
+//
+//Copyright (C) COURNAC 2015
+//This program is free software; you can redistribute it and/or
+//modify it under the terms of the GNU General Public License
+//as published by the Free Software Foundation; either version 2
+//of the License, or (at your option) any later version.
+//
+//This program is distributed in the hope that it will be useful,
+//but WITHOUT ANY WARRANTY; without even the implied warranty of
+//MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//GNU General Public License for more details.
+//
+//You should have received a copy of the GNU General Public License
+//along with this program; if not, write to the Free Software
+//Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+//  This code makes the matrices from the files of reads, normalizes it, 
+//  calculates the Colocalization Scores and generate random sets 
+//  with the conservation of the distribution in GC content or coverage. 
+
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <math.h>
@@ -6,9 +27,6 @@
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 
-//  This code makes the matrices from the files of reads, normalizes it, 
-//  calculates the Colocalization Scores and generate random sets 
-//  with the conservation of the distribution in GC content or coverage. 
 
 int main(int argc, char *argv[])
 {
