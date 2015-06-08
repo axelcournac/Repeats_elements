@@ -6,7 +6,7 @@
 #include <gsl/gsl_rng.h>
 #include <gsl/gsl_randist.h>
 
-//  THis code makes the matrices from the files of reads, normalizes it, 
+//  This code makes the matrices from the files of reads, normalizes it, 
 //  calculates the Colocalization Scores and generate random sets 
 //  with the conservation of the distribution in GC content or coverage. 
 
@@ -73,15 +73,7 @@ float moy_GC_repeat=0,moy_GC_random=0;
 
 fic2 = fopen(argv[2], "r");
 
-// fic3 = fopen("/home/romain/Desktop/divers/CELL/hesc_repeat/repeat_masker_hg19_10.dat22","r");
-// fic3 = fopen("/home/romain/Desktop/divers/CELL/hesc_repeat/ITS-T2AG3-10-7.bed.dat.correct.ind.binomial.format","r");
 fic3 = fopen("hesc_repeat/repeat_masker_2013.dat22","r");
-// fic3 = fopen("nads_10.dat22","r");
-// fic3 = fopen("TF_and_others_trna_nads_10.dat23","r");
-// fic3 = fopen("/home/romain/Desktop/divers/CELL/TF_and_others_trna_nads_10.dat22","r");
-
-// fic3 = fopen("/home/romain/Desktop/divers/CELL/syn_seq_repeats.dat22","r");
-// fic3 = fopen("/home/romain/Desktop/divers/CELL/out_s20_masked.dat22","r");
 
 fic7 = fopen(argv[3],"r");
 
@@ -119,7 +111,7 @@ fclose(fic2);
 
 // -------------------------------------------------------------------------------------------------------------------------------------------------
 //  NORMALISATION MATRICE :  SCN Norme 2 
-
+// -------------------------------------------------------------------------------------------------------------------------------------------------
 
 float seuil_bin = atoi(argv[4]);
 float seuil_bin2 = atoi(argv[5]);
@@ -265,9 +257,6 @@ int GC_indice[120000];  // give for one bin indice the GC bin indice
 printf("BINS IN THE AREA DETECTABLE : %d \n",ind_area);
 printf("Initial Distribution of cover in memory \n");
 
-
-
-
 // ---------------------------------------------------------------------------------------------------------------------------------------------------   
 int *GC_freq_repeat;GC_freq_repeat = calloc (N_bins_parameter, sizeof(int));
 
@@ -365,7 +354,6 @@ vect_good_bin  = (int*)calloc(ind_area, sizeof(int));
 		fclose(fic55);
 	}	
 
-
   if(keep[indice_repeat] ==1)
   {  
   NPOS_repeat++;
@@ -378,7 +366,6 @@ vect_good_bin  = (int*)calloc(ind_area, sizeof(int));
       }
   
   indice_repeat_before = indice_repeat;
-
   }
  	
 strcpy(type_repeat_avant,type_repeat);
