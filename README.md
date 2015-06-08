@@ -2,21 +2,21 @@
 This repository contains scripts to recreate figures in paper The 3D folding of metazoan genomes correlates with the association of similar repetitive elements (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 
-# Dependencies
+## Dependencies
 
 Scripts will run on OS X and other Unix-based systems. External dependencies should be installed somewhere on your `$PATH`.
 
-## R packages
+### R packages
 
 Lots of commonly-installed R packages are also used, including but not limited to: 
 
-### CRAN
+#### CRAN
 
 * `calibrate`
 * `verification`
 * `ROCR`
 
-## External programs
+### External programs
 
 * `bedtools`
 * `bigWigAverageOverBed`<sup>*</sup>
@@ -24,7 +24,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 * `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
 * `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
-* Bowtie2 / [bowtie2] (http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
+* `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
 
 ## Raw data
@@ -50,13 +50,26 @@ We convert the output of the aligment which is in HDF5 format into text file wit
 bash convert_HDF5_txt.bh /path_of_the_bank_of_the_output_of_aligment
 ```
 
+## Filtering of the data
 
-### Filtering of the data
-### Normalization of the data
+We first assigned to each correct read the restriction fragment. We used a C code assignment.c. 
+All the genome is put into memory for rapidity raison. The file frag_hindiii_chrALL.dat1 (a copy is present in the repository data) contains the restriction map of the genome for the enzyme. The map was done using the tool restrict from emboss (http://emboss.bioinformatics.nl/cgi-bin/emboss/restrict).
+
+The code assignment.c makes several filter on the reads: 
+- It can filter a range of sizes of the DNA segments to the reads to be considered valid. This range must correspond to the range that the sequencer accepts. For example, put it at [200 pb - 500 bp].
+- It can filter reads according to the distance between the start of the read and the next restriction site: reads too clothed of the restriction site could be non valid alignments. 
+
+To use the assignment.c, compile it and simply execute it:
+```bash
+gcc assignment.c
+./a.out
+```
+
+## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
 With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. 
 
-# Calcul of Colocalisation Scores and random generations
+## Calcul of Colocalisation Scores and random generations
 
 Colocalisation Scores were calculated. 
 For random generetion and vectors manipulation, we used the generators from the GNU Scientific Library. 
