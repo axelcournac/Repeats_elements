@@ -43,7 +43,7 @@ We separate both ends of the reads using the command lines written in the script
 ```bash
 bash separate_mates.sh
 ```
-We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of hiclib). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
+We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of [hiclib] (https://bitbucket.org/mirnylab/hiclib) ). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
 Example of lines used to launch the alignment procedure:
 ```bash
 bank='/media/human/bank400260/';  echo $bank; 
