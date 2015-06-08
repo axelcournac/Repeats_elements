@@ -115,8 +115,12 @@ mv a.out matrix2
 echo execution :
 
 mkdir OUTPUT_TEMP2
-./matrix2 10 /data/axel/Hi_seq_Dixon/hesc_rep2/output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners /home/romain/Desktop/divers/CELL/covering.dat 200 800
+./matrix2 10 /data/axel/Hi_seq_Dixon/hesc_rep2/output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners /home/romain/Desktop/divers/CELL/coverage_bins_hESC.dat 200 800
 ```
+This program takes several arguments: 
+- the file of output of the aligment 
+- the file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
+- the th
 
 ### Plots of the results
 To lauch the calculus of the pvalue associated to each repeat element, we R script 
