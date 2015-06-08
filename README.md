@@ -65,6 +65,12 @@ gcc assignment.c
 ./a.out
 ```
 
+We then removed PCR duplicates i.e paires of reads that have exactly the same positions. This is done using the C code pcr_duplicate.c (using hash table for C with the library uthash-1.9.6).
+```bash
+gcc pcr_duplicate.c
+./a.out
+```
+
 ## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
 With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. 
