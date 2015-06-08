@@ -37,10 +37,14 @@ We convert the files in fastq files using sra tool fastq-dump:
 ```bash
 ./fastq-dump /data/human/*
 ```
-We separate both ends of the reads using the command lines written in the script script_separate.bh :
+We separate both ends of the reads using the command lines written in the script separate_mates.sh :
 ```bash
-bash script_separate.bh
+bash separate_mates.sh
 ```
+We aligned the reads with iterative alignment of the script iterapive_mapping.py of hiclib. 
+We modified the script to add a value threshold on the mapping quality. 
+
+We convert the output of the aligment which is in HDF5 format into text file with the script 
 
 ### Filtering of the data
 ### Normalization of the data
