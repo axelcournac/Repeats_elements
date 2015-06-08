@@ -81,6 +81,8 @@ We then removed PCR duplicates i.e paires of reads that have exactly the same po
 gcc pcr_duplicate.c
 ./a.out
 ```
+If we want to filter all reads that overlap a repeated sequence of Rebase, we used the C code
+
 
 ## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
