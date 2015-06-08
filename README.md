@@ -64,11 +64,12 @@ bash convert_HDF5_txt.bh /path_of_the_bank_of_the_output_of_aligment
 
 ## Filtering of the data
 
-We first assigned to each correct read the restriction fragment of the associated HiC experiement. We used a C code assignment.c. All the genome is put into memory for faster code execution. The file frag_hindiii_chrALL.dat1 (a copy is present in the repository data) contains the restriction map of the genome for the assoicated enzyme. The map was done using the tool restrict from emboss (http://emboss.bioinformatics.nl/cgi-bin/emboss/restrict).
+We first assigned to each correct read the restriction fragment of the associated HiC experiment. We used a C code assignment.c. All the genome is put into memory for faster code execution. The file frag_hindiii_chrALL.dat1 contains the restriction map of the genome for the assoicated enzyme (a copy is present in the repository data). The map was done using the tool restrict from emboss (http://emboss.bioinformatics.nl/cgi-bin/emboss/restrict).
 
 The code assignment.c makes several filters on the reads: 
-- It can filter a range of sizes of the DNA segments to the reads to be considered valid. This range must correspond to the range that the sequencer accepts. For example, we put it at [200 pb - 500 bp].
-- It can filter reads according to the distance between the start of the read and the next restriction site: reads too clothed of the restriction site could be non valid alignments. 
+- It filters a range of sizes of the DNA segments to the reads to be considered valid. This range must correspond to the range that the sequencer accepts. For example, we put it at [200 pb - 500 bp].
+- It filters reads according to the distance between the start of the read and the next restriction site: reads too clothed of the restriction site could be non valid alignments. 
+- It filters reads belonging or not to the same chromosome. 
 
 To use the assignment.c, compile it and simply execute it:
 ```bash
@@ -115,18 +116,18 @@ echo execution :
 mkdir OUTPUT_TEMP2
 ./matrix2 10 output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners coverage_bins_hESC.dat 200 800
 ```
-This program takes several arguments: 
+This program takes several arguments in input: 
 - a file of output of the aligment 
-- a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
-- the thresholds [min - max] for the normalization procedure that will exclude all bins with norms outside the ranges. It will notably filters poor interacting bins. 
+- a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution that will be used to make random sets with a particular null model. 
+- the thresholds [min - max] used for the normalization procedure that will exclude all bins whose norm is outside the ranges. It will notably filters poor interacting bins. 
 
 To calculate the bins coverage from a file of output of alignment, we use the C code bins_coverage.c.
-This code takes as input a file that contains coordinates of the bins and alignment output file. 
+This code takes as input a file that contains coordinates of the bins and an alignment output file. 
 
 
 ### Plots of the significant repeats:
-To lauch the calculus of the pvalue associated to each repeat element, we use R script null_model.R that makes the fit with a log normnal law. 
-To launch the script for every repeat, lauch in the directory where you put the output of the colocalization_cover.c code:
+To lauch the calculus of the pvalue associated to each repeat element, we use R script null_model.R that makes the fit with a log normnal law to the group of random sets. 
+To launch the script for every repeat, lauch it in the directory where you put the output of the colocalization_cover.c code:
 
 ```bash
 bash script_null_model.sh
@@ -135,7 +136,7 @@ To plot scatter plots of the different repeats elements. we use the R script: sc
 ```bash
 Rscript scatter_plot2.R
 ```
-It will generate the final plots as the ones presented in the Fig 2 or Fig 4 of the main text. 
+It will generate the final plots as the ones presented in the Fig 2 or Fig 4 of the main text. An example of such figure is shown in 
 
 ### Scripts used for Figures 3
 We used several R scripts:
@@ -143,7 +144,7 @@ We used several R scripts:
 
 - For the Receiver Operating Curves (ROC) to show the correlation with enrichment of Transcription Factor Binding Sites (TFBS), we used the script roc_repeat_TFBS.R. The different input files for this plot are given in the data repository.
 
-- For the comparison beteween cell types repeats enriched with transcription factors CTCF, OCT4 and NANOG, we use the R script compare_cell_types.R. 
+- For the comparison beteween cell types repeats enriched with transcription factors CTCF, OCT4 and NANOG, we use the R script compare_cell_types.R.  
 
 
 
