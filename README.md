@@ -1,5 +1,5 @@
 # Repeats elements and HiC analysis
-This repository contains scripts to recreate figures in paper The 3D folding of metazoan genomes correlates with the association of similar repetitive elements (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
+This repository contains scripts to recreate figures in paper **The 3D folding of metazoan genomes correlates with the association of similar repetitive elements** (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 
 ## Dependencies
@@ -40,8 +40,7 @@ We separate both ends of the reads using the command lines written in the script
 ```bash
 bash separate_mates.sh
 ```
-We aligned the reads with iterative alignment (scripts used: iterative_mapping.py and mapping.py of hiclib). 
-We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
+We aligned the reads with iterative alignment procedure (scripts used: iterative_mapping.py and mapping.py of hiclib). We modified the script mapping.py to add a value threshold on the mapping quality (30 or 40). The modification is given in the python directory. 
 Example of lines used to launch the alignment procedure:
 ```bash
 bank='/media/human/bank400260/';  echo $bank; 
@@ -62,11 +61,10 @@ bash convert_HDF5_txt.bh /path_of_the_bank_of_the_output_of_aligment
 
 ## Filtering of the data
 
-We first assigned to each correct read the restriction fragment. We used a C code assignment.c. 
-All the genome is put into memory for rapidity raison. The file frag_hindiii_chrALL.dat1 (a copy is present in the repository data) contains the restriction map of the genome for the enzyme. The map was done using the tool restrict from emboss (http://emboss.bioinformatics.nl/cgi-bin/emboss/restrict).
+We first assigned to each correct read the restriction fragment of the associated HiC experiement. We used a C code assignment.c. All the genome is put into memory for faster code execution. The file frag_hindiii_chrALL.dat1 (a copy is present in the repository data) contains the restriction map of the genome for the assoicated enzyme. The map was done using the tool restrict from emboss (http://emboss.bioinformatics.nl/cgi-bin/emboss/restrict).
 
-The code assignment.c makes several filter on the reads: 
-- It can filter a range of sizes of the DNA segments to the reads to be considered valid. This range must correspond to the range that the sequencer accepts. For example, put it at [200 pb - 500 bp].
+The code assignment.c makes several filters on the reads: 
+- It can filter a range of sizes of the DNA segments to the reads to be considered valid. This range must correspond to the range that the sequencer accepts. For example, we put it at [200 pb - 500 bp].
 - It can filter reads according to the distance between the start of the read and the next restriction site: reads too clothed of the restriction site could be non valid alignments. 
 
 To use the assignment.c, compile it and simply execute it:
@@ -118,6 +116,9 @@ This program takes several arguments:
 - a file of output of the aligment 
 - a file containing the information concerning a biological parameter of the bins used for the analysis, i.e could be the GC content, the reads coverage, the chromosomes distribution. 
 - the thresholds [min - max] for the normalization procedure that will exclude all bins with norms outside the ranges. It will notably filters poor interacting bins. 
+
+To calculate the bins coverage from a file of output of alignment, we use the C code. 
+
 
 ### Plots of the significant repeats:
 To lauch the calculus of the pvalue associated to each repeat element, we use R script null_model.R that makes the fit with a log normnal law. 
