@@ -144,7 +144,7 @@ We used several R scripts:
 
 - For the Receiver Operating Curves (ROC) to show the correlation with enrichment of Transcription Factor Binding Sites (TFBS), we used the script roc_repeat_TFBS.R. The different input files for this plot are given in the data repository.
 
-- For the comparison beteween cell types repeats enriched with transcription factors CTCF, OCT4 and NANOG, we use the R script was used to make the plot. 
+- For the comparison beteween cell types repeats enriched with transcription factors CTCF, OCT4 and NANOG, we use the R script compare_cell_types.R. 
 
 
 
