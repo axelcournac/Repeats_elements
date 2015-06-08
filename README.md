@@ -110,7 +110,7 @@ mv a.out matrix2
 echo execution :
 
 mkdir OUTPUT_TEMP2
-./matrix2 10 /data/axel/Hi_seq_Dixon/hesc_rep2/output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners /home/romain/Desktop/divers/CELL/coverage_bins_hESC.dat 200 800
+./matrix2 10 output_alignment_idpt_inter_bk55_56_57.dat.d120.pcr.outliners coverage_bins_hESC.dat 200 800
 ```
 This program takes several arguments: 
 - a file of output of the aligment 
