@@ -119,6 +119,12 @@ mkdir OUTPUT_TEMP2
 ```
 
 ### Plots of the results
+To lauch the calculus of the pvalue associated to each repeat element, we R script 
+To launch the script 
+```bash
+bash script_null_model.sh
+```
+
 To plot scatter plots of the different repeats elements. we use the R script: scatter_plot.R
 
 
