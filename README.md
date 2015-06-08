@@ -22,16 +22,15 @@ Lots of commonly-installed R packages are also used, including but not limited t
 
 ### External programs
 
-* `bedtools`
+* `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
+* `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 * `ICE` / [hiclib](http://mirnylab.bitbucket.org/hiclib)
 * `GNU Scientific Library` / [GSL](http://www.gnu.org/software/gsl/) 
-* `SRA tool` / [SRA](http://trace.ncbi.nlm.nih.gov/Traces/sra/sra.cgi?cmd=show&f=software&m=software&s=software)
 * `uthash a hash table in C` / [uthash](https://troydhanson.github.io/uthash/userguide.html)
-* `Bowtie2 ` / [bowtie2](http://bowtie-bio.sourceforge.net/bowtie2/index.shtml)
 
 
 ## Raw data
-We downloaded raw data from Short Read Archive server at the following address :
+We downloaded raw data from Short Read Archive server at the following address, example for the first run of the bank hESC, replicate 2 from [Dixon et al. Nature 2012] (http://www.nature.com/nature/journal/v485/n7398/full/nature11082.html) 
 
 ftp://ftp-trace.ncbi.nlm.nih.gov/sra/sra-instant/reads/ByRun/sra/SRR/SRR400/SRR400260/SRR400260.sra
 
