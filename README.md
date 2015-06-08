@@ -91,7 +91,7 @@ gcc filter_reads_repeats.c
 
 ## Normalization of the data
 We used the normalization procedure called SCN that we implemented in C. 
-With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. The normalization is done in the code 
+With dynamic allocation of memory, C language allows us to allocate big matrices (100000 x 100000) in a station with 50G of ram. The normalization is done in the code colocalization_cover.c 
 
 ## Calcul of Colocalization Scores and random generations
 
@@ -99,7 +99,7 @@ All calculations of Colocalization Scores of the groups of repeat elements and r
 ```bash
 #!/bin/bash
 
-nom_prog="matrice_repeat_SIMPLE_cover_sum_fev2015"
+nom_prog="colocalization_cover"
 
 echoCompilation and linking of: $nom_prog   .
 echo compile :
