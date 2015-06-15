@@ -15,6 +15,7 @@ Lots of commonly-installed R packages are also used, including but not limited t
 * `calibrate`
 * `verification`
 * `ROCR`
+* `libRmath`
 
 #### Bioconductor
 
