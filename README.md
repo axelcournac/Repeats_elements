@@ -125,6 +125,11 @@ This program takes several arguments in input:
 To calculate the bins coverage from a file of output of alignment, we use the C code bins_coverage.c.
 This code takes as input a file that contains coordinates of the bins and an alignment output file. 
 
+To have bins that are enriched with a certain repeat (repeat_masker_2013.dat22 file), we used the C code binnage_distrib.c which calculate the p-value of the null model of distribution (binomial law) associated with every bins. The library libRmath must be installed to use R functions in C. 
+To compile : 
+```bash
+gcc binnage_distrib.c -lRmath  -lm
+```
 
 ### Plots of the significant repeats:
 To lauch the calculus of the pvalue associated to each repeat element, we use R script null_model.R that makes the fit with a log normnal law to the group of random sets. 
