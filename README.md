@@ -1,5 +1,5 @@
 # Repeats elements and HiC analysis
-This repository contains scripts to recreate figures in paper **The 3D folding of metazoan genomes correlates with the association of similar repetitive elements** (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
+This repository contains scripts to recreate figures in paper [The 3D folding of metazoan genomes correlates with the association of similar repetitive elements] (http://nar.oxfordjournals.org/content/early/2015/11/24/nar.gkv1292.abstract)  (2015). For queries or help getting these running, you can contact me on mail or open an issue at the github repository.
 
 
 ## Dependencies
